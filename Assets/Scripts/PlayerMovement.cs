@@ -24,6 +24,9 @@ public class PlayerMovement : MonoBehaviour
     public float rSpeedPerFrame;
     
     
+    void OnEnable() {
+        Debug.Log("enabled");
+    }
     
     // Start is called before the first frame update
     void Start()

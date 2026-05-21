@@ -6,6 +6,15 @@
             "id": "50c1a2e4-b04e-4c8c-b11a-b4e4f29cf29e",
             "actions": [
                 {
+                    "name": "Turn",
+                    "type": "Value",
+                    "id": "e068d6a4-21fb-4df5-afb5-6f6726610543",
+                    "expectedControlType": "Axis",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
                     "name": "Move",
                     "type": "Value",
                     "id": "fa383967-8ff7-41d7-98f8-42555802d193",
@@ -31,15 +40,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "Turn",
-                    "type": "PassThrough",
-                    "id": "e068d6a4-21fb-4df5-afb5-6f6726610543",
-                    "expectedControlType": "Digital",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -256,6 +256,39 @@
                     "name": "Positive",
                     "id": "39c19f73-dc4c-4134-8658-2ce52bec20d3",
                     "path": "<Gamepad>/rightTrigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "1D Axis",
+                    "id": "8a58b7a8-e830-49de-9c48-0be457b4ec06",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Turn",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Negative",
+                    "id": "f1380459-c0f8-4269-8ed6-8deb457abf15",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad",
+                    "action": "Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Positive",
+                    "id": "38709131-7ad8-45fc-8eb8-60eb7dd05f6f",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad",

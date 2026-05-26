@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float sidewaysSpeed = 0;
     public float rotationSpeed = 0;
     public Vector2 moveVector;
+    public float turnValue;
     
     //Speed caps
     public float FORWARDSPEEDCAP;
@@ -35,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         sidewaysSpeed = 0;
         rotationSpeed = 0;
         moveVector = Vector2.zero;
+        turnValue = 0f;
     
         //Speed caps
         FORWARDSPEEDCAP = 300f;
@@ -71,15 +73,23 @@ public class PlayerMovement : MonoBehaviour
         //     sidewaysSpeed += sSpeedPerFrame;
         // }
 
-        forwardSpeed = moveVector.y * 30;
-        sidewaysSpeed = moveVector.x * 30;
+        forwardSpeed = (moveVector.y * 30) * Time.deltaTime;
+        sidewaysSpeed = (moveVector.x * 30)  * Time.deltaTime;
+        rotationSpeed += (turnValue) * Time.deltaTime;
         
         FixVariables();
         Move();
         ApplyFriction();
         
     }
-
+    
+    public void OnFire(InputAction.CallbackContext context)
+    {
+        if (context.performed) {
+            Debug.Log("fire");
+        }
+    }
+    
     public void OnMove(InputAction.CallbackContext context)
     {
         float moveX = context.ReadValue<Vector2>().x;
@@ -93,12 +103,29 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnTurn(InputAction.CallbackContext context)
     {
-        Debug.Log("test");
-        float turnInput = context.ReadValue<float>();
-        Debug.Log($"turnInput{turnInput}");
-        //ISSUE: triggers are not being detected (method not printing)
+        // Debug.Log("test");
+        float turnInput;
+        if (context.performed) {
+            turnInput = context.ReadValue<float>();
+        }
+        else {
+            turnInput = 0f;
+        }
+        turnInput = ProcessTrigger(turnInput);
+        
+        Debug.Log($"turnInput={turnInput}");
+        turnValue = turnInput;
     }
 
+    public float ProcessTrigger(float value)
+    {
+        if (value <= 0 && value >= -1)
+        {
+            return Mathf.Abs(value) * 0.5f;
+        }
+        return (value * 0.5f) + 0.5f;
+    }
+    
     private void FixedUpdate()
     {
         

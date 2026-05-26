@@ -881,7 +881,19 @@ MonoBehaviour:
     m_ActionId: 1199c99f-7e03-42b6-be68-54d62565f5fe
     m_ActionName: Player/Look[/Mouse/delta,/Pen/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1803448837}
+        m_TargetAssemblyTypeName: PlayerMovement, Assembly-CSharp
+        m_MethodName: OnFire
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: b77d0eab-9ff3-44e3-b8f8-fc0ae80ca3db
     m_ActionName: Player/Fire[/Mouse/leftButton,/45E-28E/trigger]
   - m_PersistentCalls:
@@ -944,7 +956,7 @@ MonoBehaviour:
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 519420031}
 --- !u!1 &1877333056
 GameObject:
   m_ObjectHideFlags: 0

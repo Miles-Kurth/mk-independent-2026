@@ -31,7 +31,7 @@ public partial class @PlatformerInputs: IInputActionCollection2, IDisposable
                     ""name"": ""Turn"",
                     ""type"": ""Value"",
                     ""id"": ""e068d6a4-21fb-4df5-afb5-6f6726610543"",
-                    ""expectedControlType"": ""Axis"",
+                    ""expectedControlType"": ""Analog"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
